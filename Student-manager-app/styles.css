@@ -1,0 +1,275 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.animation-section {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.animation-section:hover {
+    transform: translateY(-5px);
+}
+
+.animation-section h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+img {
+    border-radius: 8px;
+    background: #f0f0f0;
+    border: 2px solid #ddd;
+}
+
+/* ===== KEYFRAME ANIMATIONS ===== */
+
+/* 1. Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 2s ease-in-out infinite;
+}
+
+/* 2. Slide In Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-in {
+    animation: slideIn 2s ease-in-out infinite;
+}
+
+/* 3. Rotate Animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-rotate {
+    animation: rotate 3s linear infinite;
+}
+
+/* 4. Scale/Zoom Animation */
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate-scale {
+    animation: scale 2s ease-in-out infinite;
+}
+
+/* 5. Bounce Animation */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+/* 6. Pulse Animation */
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+    }
+
+    50% {
+        box-shadow: 0 0 0 15px rgba(102, 126, 234, 0);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* 7. Swing Animation */
+@keyframes swing {
+    20% {
+        transform: rotate(15deg);
+    }
+
+    40% {
+        transform: rotate(-10deg);
+    }
+
+    60% {
+        transform: rotate(5deg);
+    }
+
+    80% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.animate-swing {
+    animation: swing 2s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+/* 8. Flash Animation */
+@keyframes flash {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0.3;
+    }
+}
+
+.animate-flash {
+    animation: flash 1.5s ease-in-out infinite;
+}
+
+/* 9. Complex Animation (Multi-Effect) */
+@keyframes complexAnimation {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+
+    25% {
+        transform: translate(50px, -50px) rotate(90deg) scale(1.1);
+    }
+
+    50% {
+        transform: translate(0, -100px) rotate(180deg) scale(1.2);
+        opacity: 0.8;
+    }
+
+    75% {
+        transform: translate(-50px, -50px) rotate(270deg) scale(1.1);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg) scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-complex {
+    animation: complexAnimation 4s ease-in-out infinite;
+}
+
+/* 10. Hover Animation */
+@keyframes hoverFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.animate-hover {
+    transition: all 0.3s ease;
+}
+
+.animate-hover:hover {
+    animation: hoverFloat 1s ease-in-out;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .animation-section {
+        padding: 20px;
+    }
+
+    .animation-section h2 {
+        font-size: 1.2em;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+    }
+}
